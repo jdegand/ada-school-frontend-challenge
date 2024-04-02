@@ -1,0 +1,74 @@
+<h1>Ada School Bus App</h1>
+<h2>Book today!</h2>
+
+<!--
+<form #bookingForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="origin">Origin</label>
+    <br>
+    <input id="origin" name="origin" type="text" ngModel>
+    <br>
+    <br>
+    <label for="destination">Destination</label>
+    <br>
+    <input id="destination" name="destination" type="text" ngModel>
+    <br>
+    <br>
+    <label for="passengers">Number of Passengers</label>
+    <br>
+    <input id="passengers" name="passengers" type="number" ngModel>
+    <br>
+    <br>
+    <label for="date">Date</label>
+    <br>
+    <input id="date" name="date" type="date" ngModel>
+    <br>
+    <br>
+    <label for="time">Pick a time between 7am and 11pm:</label>
+    <br>
+    <input type="time" id="time" name="time" placeholder="HH:mm:ss" min="07:00:00" max="23:00:00" ngModel>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+-->
+
+<form #bookingForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <label for="origin">Origin</label>
+    <br>
+    <select id="origin" name="formSelect" [(ngModel)]="model.origin" required>
+        <option [value]="null">Choose</option>
+        @for (origin of origins; track origin.label) {
+        <option [value]="origin.value">{{ origin.label }}</option>
+        }
+    </select>
+    <br>
+    <br>
+    <label for="destination">Destination</label>
+    <br>
+    <select id="destination" name="destination" [(ngModel)]="model.destination" required>
+        <option [value]="null">Choose</option>
+        @for (destination of destinations; track destination.label) {
+        <option [value]="destination.value">{{ destination.label }}</option>
+        }
+    </select>
+    <br>
+    <br>
+    <label for="passengers">Number of Passengers</label>
+    <br>
+    <input id="passengers" name="passengers" type="number" [(ngModel)]="model.occupants" required>
+    <br>
+    <br>
+    <label for="date">Date</label>
+    <br>
+    <input id="date" name="date" type="date" [(ngModel)]="model.date" required>
+    <br>
+    <br>
+    <label for="time">Pick a time between 7am and 11pm:</label>
+    <br>
+    <input type="time" id="time" name="time" placeholder="HH:mm:ss" step="600" min="07:00:00" max="23:00:00"
+        [(ngModel)]="model.time" required>
+    <br>
+    <br>
+    <button>Submit</button>
+</form>

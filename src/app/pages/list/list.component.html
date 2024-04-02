@@ -1,0 +1,5 @@
+@for (booking of bookings; track booking.id) {
+<div>
+    <a [routerLink]="['/detailpage', booking.id]">Booking {{booking.id}}</a>
+</div>
+}
