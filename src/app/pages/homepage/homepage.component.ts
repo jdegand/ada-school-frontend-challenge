@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
-import { Observable, Subscription } from 'rxjs';
-import { Booking } from '../../interface/booking.model';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -15,16 +13,6 @@ import { AsyncPipe } from '@angular/common';
 export class HomepageComponent {
 
   apiService = inject(ApiService);
-
-  /*
-  //@ViewChild('bookingForm') form!: NgForm;
-
-  bookingForm = viewChild.required<NgForm>('bookingForm');
-
-  onSubmit() {
-    console.log(this.bookingForm())
-  }
-  */
 
   @ViewChild('bookingForm') form!: NgForm;
 
