@@ -14,7 +14,7 @@ export class ApiService {
     return this.#http.get<Booking[]>(this.#bookingUrl);
   }
 
-  addBooking(body: Booking) {
+  addBooking(body: unknown) {
     return this.#http.post(this.#bookingUrl, body);
   }
 

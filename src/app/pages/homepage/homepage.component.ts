@@ -73,13 +73,52 @@ export class HomepageComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log(this.form);
+      console.log('form', this.form);
+      let formData = new FormData();
+
+      /*
+      for (const field in this.form.controls) {
+        if (this.form.controls.hasOwnProperty(field)) {
+          // have to convert to match Booking model 
+          console.log('field', field);
+          const control = this.form.controls[field];
+          console.log('control', control);
+          formData.append(field, control.value);
+          formData.append('id', new Date().getTime().toString())
+        }
+      }
+      */
+
+      formData.append("origin", this.form.controls['formSelect'].value);
+      formData.append("destination", this.form.controls['destination'].value);
+      formData.append("occupants", this.form.controls['passengers'].value);
+      formData.append("date", this.form.controls['date'].value);
+      formData.append("time", this.form.controls['time'].value);
+
+      formData.forEach((value, key) => {
+        console.log(key + " " + value)
+      });
+
+      const jsonData = this.convertFormDataToJson(formData);
+
+      this.apiService.addBooking(jsonData).subscribe((data) => console.log('data', data));
+
+      this.form.reset();
+
     } else {
       Object.keys(this.form.controls).forEach(key => {
         this.form.controls[key].markAsTouched();
       });
     }
 
+  }
+
+  convertFormDataToJson(formData: FormData): any {
+    let jsonObject: any = {};
+    formData.forEach((value, key) => {
+      jsonObject[key] = value;
+    });
+    return jsonObject;
   }
 
 }
