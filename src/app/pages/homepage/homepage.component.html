@@ -1,8 +1,6 @@
 <h1>Ada School Bus App</h1>
 <h2>Book today!</h2>
-
 <form #bookingForm="ngForm" (ngSubmit)="onSubmit()">
-
     <label for="origin">Origin</label>
     <br>
     <select id="origin" name="formSelect" [(ngModel)]="model.origin" required>
@@ -11,6 +9,11 @@
         <option [value]="origin.value">{{ origin.label }}</option>
         }
     </select>
+    <br>
+    @if(bookingForm.controls['formSelect'].invalid && bookingForm.controls['formSelect'].touched &&
+    bookingForm.controls['formSelect'].errors?.['required'] ){
+    <small>Origin is required.</small>
+    }
     <br>
     <br>
     <label for="destination">Destination</label>
@@ -22,21 +25,41 @@
         }
     </select>
     <br>
+    @if(bookingForm.controls['destination'].invalid && bookingForm.controls['destination'].touched &&
+    bookingForm.controls['destination'].errors?.['required'] ){
+    <small>Destination is required.</small>
+    }
+    <br>
     <br>
     <label for="passengers">Number of Passengers</label>
     <br>
     <input id="passengers" name="passengers" type="number" [(ngModel)]="model.occupants" required>
+    <br>
+    @if(bookingForm.controls['passengers'].invalid && bookingForm.controls['passengers'].touched &&
+    bookingForm.controls['passengers'].errors?.['required'] ){
+    <small>Passengers is required.</small>
+    }
     <br>
     <br>
     <label for="date">Date</label>
     <br>
     <input id="date" name="date" type="date" [(ngModel)]="model.date" required>
     <br>
+    @if(bookingForm.controls['date'].invalid && bookingForm.controls['date'].touched &&
+    bookingForm.controls['date'].errors?.['required'] ){
+    <small>Date is required.</small>
+    }
+    <br>
     <br>
     <label for="time">Pick a time between 7am and 11pm:</label>
     <br>
     <input type="time" id="time" name="time" placeholder="HH:mm:ss" step="600" min="07:00:00" max="23:00:00"
         [(ngModel)]="model.time" required>
+    <br>
+    @if(bookingForm.controls['time'].invalid && bookingForm.controls['time'].touched &&
+    bookingForm.controls['time'].errors?.['required'] ){
+    <small>Time is required.</small>
+    }
     <br>
     <br>
     <button>Submit</button>
