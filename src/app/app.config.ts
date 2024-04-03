@@ -9,7 +9,7 @@ import { AppData } from './app.data';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
-    importProvidersFrom(InMemoryWebApiModule.forRoot(AppData, { delay: 1000, dataEncapsulation: false })),
+    importProvidersFrom(InMemoryWebApiModule.forRoot(AppData, { delay: 1000 })),
     provideRouter(routes, withComponentInputBinding())
   ]
 };

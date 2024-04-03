@@ -17,7 +17,8 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - Using the in-memory web API, I think it is important to use `JSON`.  
 - I was using a `FormData` object and the POST request returned `{id: 3}` only (Booking collection starts with 2 objects).
 - I am using code I found on [Stack Overflow](https://stackoverflow.com/questions/43347621/correct-way-to-do-a-put-or-post-in-angular-in-memory-web-api) and it uses `reqInfo.utils.getJsonBody(reqInfo.req)`.  I need look into more methods I can use.  Maybe, I don't have to convert my `FormData` into JSON.  
-- Using different names for the form controls can add extra snags.  Sending FormData is usually not problematic with real backends.    
+- Using different names for the form controls can add extra snags.  Sending FormData is usually not problematic with real backends. 
+- You can use interceptors with the in-memory web API.    
 
 ## Continued Development
 
@@ -41,3 +42,4 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - [Stack Overflow](https://stackoverflow.com/questions/43347621/correct-way-to-do-a-put-or-post-in-angular-in-memory-web-api) - correct way to do a put or post in angular in memory web api
 - [Stack Overflow](https://stackoverflow.com/questions/40062477/formdata-append-not-working) - formdata append not working
 - [Stack Overflow](https://stackoverflow.com/questions/52031766/angular-form-data-wont-append) - angular form data wont append
+- [Stack Overflow](https://stackoverflow.com/questions/45240338/how-to-use-the-angular-in-memory-web-api-data-attribute) - how to use the angular in memory web api data attribute

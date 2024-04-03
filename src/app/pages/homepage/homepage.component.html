@@ -5,8 +5,8 @@
     <br>
     <select id="origin" name="formSelect" [(ngModel)]="model.origin" required>
         <option [value]="null">Choose</option>
-        @for (origin of origins; track origin.label) {
-        <option [value]="origin.value">{{ origin.label }}</option>
+        @for (origin of origins; track origin.value) {
+        <option [value]="origin.value">{{ origin.value }}</option>
         }
     </select>
     <br>
@@ -20,8 +20,8 @@
     <br>
     <select id="destination" name="destination" [(ngModel)]="model.destination" required>
         <option [value]="null">Choose</option>
-        @for (destination of destinations; track destination.label) {
-        <option [value]="destination.value">{{ destination.label }}</option>
+        @for (destination of destinations; track destination.value) {
+        <option [value]="destination.value">{{ destination.value }}</option>
         }
     </select>
     <br>

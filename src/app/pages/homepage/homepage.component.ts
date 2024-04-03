@@ -27,47 +27,37 @@ export class HomepageComponent {
 
   origins = [
     {
-      value: 1,
-      label: 'Manhattan',
+      value: 'Manhattan',
     },
     {
-      value: 2,
-      label: 'Brooklyn',
+      value: 'Brooklyn',
     },
     {
-      value: 3,
-      label: 'Queens',
+      value: 'Queens',
     },
     {
-      value: 4,
-      label: 'Bronx'
+      value: 'Bronx',
     },
     {
-      value: 5,
-      label: 'Staten Island'
+      value: 'Staten Island',
     }
   ];
 
   destinations = [
     {
-      value: 1,
-      label: 'Jersey City',
+      value: 'Jersey City',
     },
     {
-      value: 2,
-      label: 'Newark',
+      value: 'Newark',
     },
     {
-      value: 3,
-      label: 'Albany',
+      value: 'Albany',
     },
     {
-      value: 4,
-      label: 'Buffalo'
+      value: 'Buffalo'
     },
     {
-      value: 5,
-      label: 'Edison'
+      value: 'Edison'
     }
   ];
 
@@ -113,8 +103,8 @@ export class HomepageComponent {
 
   }
 
-  convertFormDataToJson(formData: FormData): any {
-    let jsonObject: any = {};
+  convertFormDataToJson(formData: FormData) {
+    const jsonObject: any = {};
     formData.forEach((value, key) => {
       jsonObject[key] = value;
     });

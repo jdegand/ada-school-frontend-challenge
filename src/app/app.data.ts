@@ -27,7 +27,7 @@ export class AppData implements InMemoryDbService {
     }
 
     post(reqInfo: RequestInfo) {
-        var collection = reqInfo.collection;
+        const collection = reqInfo.collection;
         // process only requests as /api/object/:id
         if (!collection)
             return reqInfo.utils.createResponse$(() => {
@@ -57,7 +57,7 @@ export class AppData implements InMemoryDbService {
     }
 
     put(reqInfo: RequestInfo) {
-        var collection = reqInfo.collection;
+        const collection = reqInfo.collection;
 
         // process only requests as /api/object/:id
         if (!collection || !reqInfo.id)
