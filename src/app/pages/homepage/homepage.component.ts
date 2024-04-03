@@ -16,6 +16,7 @@ export class HomepageComponent {
 
   @ViewChild('bookingForm') form!: NgForm;
 
+  // Using null causes problems in the template
   model = {
     origin: null,
     destination: null,
@@ -23,7 +24,7 @@ export class HomepageComponent {
     date: null,
     time: null
   };
- 
+
   origins = [
     {
       value: 1,
@@ -42,7 +43,7 @@ export class HomepageComponent {
       label: 'Bronx'
     },
     {
-      value:5,
+      value: 5,
       label: 'Staten Island'
     }
   ];
@@ -65,13 +66,22 @@ export class HomepageComponent {
       label: 'Buffalo'
     },
     {
-      value:5,
+      value: 5,
       label: 'Edison'
     }
   ];
 
-  onSubmit(){
-    console.log(this.form);
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(this.form);
+    } else {
+      this.form.controls['formSelect'].markAsTouched();
+      this.form.controls['destination'].markAsTouched();
+      this.form.controls['passengers'].markAsTouched();
+      this.form.controls['date'].markAsTouched();
+      this.form.controls['time'].markAsTouched();
+    }
+
   }
 
 }
