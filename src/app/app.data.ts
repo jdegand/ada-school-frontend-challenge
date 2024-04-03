@@ -36,7 +36,7 @@ export class AppData implements InMemoryDbService {
             });
 
         // insert an object to the collection
-        let item = reqInfo.utils.getJsonBody(reqInfo.req);
+        const item = reqInfo.utils.getJsonBody(reqInfo.req);
 
         item["id"] = this.genId(collection);
         collection.push(item);
@@ -67,7 +67,7 @@ export class AppData implements InMemoryDbService {
             });
 
         // update an object
-        let item = reqInfo.utils.findById(collection, reqInfo.id);
+        const item = reqInfo.utils.findById(collection, reqInfo.id);
         const body = reqInfo.utils.getJsonBody(reqInfo.req);
         if (item) {
             Object.assign(item, body);

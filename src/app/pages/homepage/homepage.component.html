@@ -3,62 +3,49 @@
 <form #bookingForm="ngForm" (ngSubmit)="onSubmit()">
     <label for="origin">Origin</label>
     <br>
-    <select id="origin" name="formSelect" [(ngModel)]="model.origin" required>
+    <select id="origin" name="formSelect" [(ngModel)]="model.origin" #origin="ngModel" required>
         <option [value]="null">Choose</option>
         @for (origin of origins; track origin.value) {
         <option [value]="origin.value">{{ origin.value }}</option>
         }
     </select>
     <br>
-    @if(bookingForm.controls['formSelect']?.touched && bookingForm.controls['formSelect']?.errors?.['required']){
-    <small>Origin is required.</small>
-    }
+    <small [hidden]="origin.valid || origin.untouched">Origin is required.</small>
     <br>
     <br>
     <label for="destination">Destination</label>
     <br>
-    <select id="destination" name="destination" [(ngModel)]="model.destination" required>
+    <select id="destination" name="destination" [(ngModel)]="model.destination" #dest="ngModel" required>
         <option [value]="null">Choose</option>
         @for (destination of destinations; track destination.value) {
         <option [value]="destination.value">{{ destination.value }}</option>
         }
     </select>
     <br>
-    @if(bookingForm.controls['destination']?.touched &&
-    bookingForm.controls['destination']?.errors?.['required']){
-    <small>Destination is required.</small>
-    }
+    <small [hidden]="dest.valid || dest.untouched">Destination is required.</small>
     <br>
     <br>
     <label for="passengers">Number of Passengers</label>
     <br>
-    <input id="passengers" name="passengers" type="number" [(ngModel)]="model.occupants" required>
+    <input id="passengers" name="passengers" type="number" [(ngModel)]="model.occupants" #passengers="ngModel" min="1"
+        max="10" required>
     <br>
-    @if(bookingForm.controls['passengers']?.touched &&
-    bookingForm.controls['passengers']?.errors?.['required']){
-    <small>Passengers is required.</small>
-    }
+    <small [hidden]="passengers.valid || passengers.untouched">Passengers is required.</small>
     <br>
     <br>
     <label for="date">Date</label>
     <br>
-    <input id="date" name="date" type="date" [(ngModel)]="model.date" required>
+    <input id="date" name="date" type="date" [(ngModel)]="model.date" #date="ngModel" required>
     <br>
-    @if(bookingForm.controls['date']?.touched &&
-    bookingForm.controls['date']?.errors?.['required']){
-    <small>Date is required.</small>
-    }
+    <small [hidden]="date.valid || date.untouched">Date is required.</small>
     <br>
     <br>
-    <label for="time">Pick a time between 7am and 11pm:</label>
+    <label for="time">Pick a time:</label>
     <br>
-    <input type="time" id="time" name="time" placeholder="HH:mm:ss" step="600" min="07:00:00" max="23:00:00"
-        [(ngModel)]="model.time" required>
+    <input type="time" id="time" name="time" placeholder="HH:mm" step="600" min="12:00" max="18:00"
+        [(ngModel)]="model.time" #time="ngModel" required>
     <br>
-    @if(bookingForm.controls['time']?.touched &&
-    bookingForm.controls['time']?.errors?.['required']){
-    <small>Time is required.</small>
-    }
+    <small [hidden]="time.valid || time.untouched">Time is required.</small>
     <br>
     <br>
     <button>Submit</button>

@@ -44,3 +44,4 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - [Stack Overflow](https://stackoverflow.com/questions/40062477/formdata-append-not-working) - formdata append not working
 - [Stack Overflow](https://stackoverflow.com/questions/52031766/angular-form-data-wont-append) - angular form data wont append
 - [Stack Overflow](https://stackoverflow.com/questions/45240338/how-to-use-the-angular-in-memory-web-api-data-attribute) - how to use the angular in memory web api data attribute
+- [Blog](https://juri.dev/blog/2016/11/ng2-template-driven-form-validators/) - template driven form validators
