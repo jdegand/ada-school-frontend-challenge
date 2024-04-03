@@ -75,11 +75,9 @@ export class HomepageComponent {
     if (this.form.valid) {
       console.log(this.form);
     } else {
-      this.form.controls['formSelect'].markAsTouched();
-      this.form.controls['destination'].markAsTouched();
-      this.form.controls['passengers'].markAsTouched();
-      this.form.controls['date'].markAsTouched();
-      this.form.controls['time'].markAsTouched();
+      Object.keys(this.form.controls).forEach(key => {
+        this.form.controls[key].markAsTouched();
+      });
     }
 
   }
