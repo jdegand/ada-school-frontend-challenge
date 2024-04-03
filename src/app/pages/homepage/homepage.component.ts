@@ -1,12 +1,11 @@
 import { Component, ViewChild, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [FormsModule, AsyncPipe],
+  imports: [FormsModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })
@@ -16,7 +15,6 @@ export class HomepageComponent {
 
   @ViewChild('bookingForm') form!: NgForm;
 
-  // Using null causes problems in the template
   model = {
     origin: null,
     destination: null,
@@ -61,23 +59,18 @@ export class HomepageComponent {
     }
   ];
 
+  getTodayDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
   onSubmit() {
     if (this.form.valid) {
       console.log('form', this.form);
       let formData = new FormData();
-
-      /*
-      for (const field in this.form.controls) {
-        if (this.form.controls.hasOwnProperty(field)) {
-          // have to convert to match Booking model 
-          console.log('field', field);
-          const control = this.form.controls[field];
-          console.log('control', control);
-          formData.append(field, control.value);
-          formData.append('id', new Date().getTime().toString())
-        }
-      }
-      */
 
       formData.append("origin", this.form.controls['formSelect'].value);
       formData.append("destination", this.form.controls['destination'].value);
@@ -85,9 +78,11 @@ export class HomepageComponent {
       formData.append("date", this.form.controls['date'].value);
       formData.append("time", this.form.controls['time'].value);
 
+      /*
       formData.forEach((value, key) => {
         console.log(key + " " + value)
       });
+      */
 
       const jsonData = this.convertFormDataToJson(formData);
 

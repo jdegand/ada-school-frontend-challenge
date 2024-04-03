@@ -35,14 +35,14 @@
     <br>
     <label for="date">Date</label>
     <br>
-    <input id="date" name="date" type="date" [(ngModel)]="model.date" #date="ngModel" required>
+    <input id="date" name="date" type="date" [(ngModel)]="model.date" #date="ngModel" [min]="getTodayDate()" required>
     <br>
     <small [hidden]="date.valid || date.untouched">Date is required.</small>
     <br>
     <br>
     <label for="time">Pick a time:</label>
     <br>
-    <input type="time" id="time" name="time" placeholder="HH:mm" step="600" min="12:00" max="18:00"
+    <input type="time" id="time" name="time" placeholder="HH:mm" step="600"
         [(ngModel)]="model.time" #time="ngModel" required>
     <br>
     <small [hidden]="time.valid || time.untouched">Time is required.</small>
