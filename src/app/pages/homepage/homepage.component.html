@@ -10,8 +10,7 @@
         }
     </select>
     <br>
-    @if(bookingForm.controls['formSelect'].touched &&
-    bookingForm.controls['formSelect'].errors?.['required'] ){
+    @if(bookingForm.controls['formSelect']?.touched && bookingForm.controls['formSelect']?.errors?.['required']){
     <small>Origin is required.</small>
     }
     <br>
@@ -25,8 +24,8 @@
         }
     </select>
     <br>
-    @if(bookingForm.controls['destination'].touched &&
-    bookingForm.controls['destination'].errors?.['required'] ){
+    @if(bookingForm.controls['destination']?.touched &&
+    bookingForm.controls['destination']?.errors?.['required']){
     <small>Destination is required.</small>
     }
     <br>
@@ -35,8 +34,8 @@
     <br>
     <input id="passengers" name="passengers" type="number" [(ngModel)]="model.occupants" required>
     <br>
-    @if(bookingForm.controls['passengers'].touched &&
-    bookingForm.controls['passengers'].errors?.['required'] ){
+    @if(bookingForm.controls['passengers']?.touched &&
+    bookingForm.controls['passengers']?.errors?.['required']){
     <small>Passengers is required.</small>
     }
     <br>
@@ -45,8 +44,8 @@
     <br>
     <input id="date" name="date" type="date" [(ngModel)]="model.date" required>
     <br>
-    @if(bookingForm.controls['date'].touched &&
-    bookingForm.controls['date'].errors?.['required'] ){
+    @if(bookingForm.controls['date']?.touched &&
+    bookingForm.controls['date']?.errors?.['required']){
     <small>Date is required.</small>
     }
     <br>
@@ -56,8 +55,8 @@
     <input type="time" id="time" name="time" placeholder="HH:mm:ss" step="600" min="07:00:00" max="23:00:00"
         [(ngModel)]="model.time" required>
     <br>
-    @if(bookingForm.controls['time'].touched &&
-    bookingForm.controls['time'].errors?.['required'] ){
+    @if(bookingForm.controls['time']?.touched &&
+    bookingForm.controls['time']?.errors?.['required']){
     <small>Time is required.</small>
     }
     <br>

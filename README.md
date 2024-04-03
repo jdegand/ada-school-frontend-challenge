@@ -19,6 +19,7 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - I am using code I found on [Stack Overflow](https://stackoverflow.com/questions/43347621/correct-way-to-do-a-put-or-post-in-angular-in-memory-web-api) and it uses `reqInfo.utils.getJsonBody(reqInfo.req)`.  I need look into more methods I can use.  Maybe, I don't have to convert my `FormData` into JSON.  
 - Using different names for the form controls can add extra snags.  Sending FormData is usually not problematic with real backends. 
 - You can use interceptors with the in-memory web API.    
+- `bookingForm.controls['formSelect']?.touched && bookingForm.controls['formSelect']?.errors?.['required']` throws a warning in the template, but if you don't include `?` after the control, you get an error in the browser.  You can suppress the warning in the `tsconfig.json` file.
 
 ## Continued Development
 
