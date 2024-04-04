@@ -20,10 +20,11 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - Using different names for the form controls can add extra snags.  Sending FormData is usually not problematic with real backends. 
 - You can use interceptors with the in-memory web API.    
 - `bookingForm.controls['formSelect']?.touched && bookingForm.controls['formSelect']?.errors?.['required']` throws a warning in the template, but if you don't include `?` after the control, you get an error in the browser.  You can suppress the warning in the `tsconfig.json` file.
+- `RouterTestingModule` is deprecated.
 
 ## Continued Development
 
-- Tests (Angular Testing Library would be a good choice)
+- Tests
 
 ## Useful Resources
 
