@@ -68,4 +68,23 @@ describe('ApiService', () => {
     req.flush(mockBooking);
   });
 
+  it('should get booking by id', () => {
+    const mockBooking = {
+      "origin": "Bronx",
+      "destination": "Newark",
+      "occupants": 5,
+      "date": new Date("04/31/2024"),
+      "time": "3:00 PM"
+    };
+
+    service.getBookingById(1).subscribe(booking => {
+      expect(booking).toEqual(mockBooking);
+    });
+
+    const req = httpTestingController.expectOne('api/bookings/1');
+    expect(req.request.method).toEqual('GET');
+
+    req.flush(mockBooking);
+  });
+
 });
