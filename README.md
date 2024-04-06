@@ -48,3 +48,8 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - [Blog](https://juri.dev/blog/2016/11/ng2-template-driven-form-validators/) - template driven form validators
 - [Stack Overflow](https://stackoverflow.com/questions/46589865/date-and-currency-validation-in-angular-4) - date and currency validation in angular 4
 - [Medium](https://medium.com/@yuvidev/angular-standalone-components-02-standalone-directives-585beb4f7e29) - angular standalone components 02 standalone directives
+- [Stack Overflow](https://stackoverflow.com/questions/42346172/angular-2-jasmine-test-whether-an-element-is-visible) - angular 2 jasmine test whether an element is visible
+- [Medium](https://netbasal.com/simulating-events-in-angular-unit-tests-5482618cd6c6) - simulating event in angular unit tests
+- [Stack Overflow](https://stackoverflow.com/questions/40093013/unit-testing-click-event-in-angular) - unit testing click event in angular
+- [YouTube](https://www.youtube.com/watch?v=5Ueip44kjsQ) - Part 42- Angular Unit test case on template driven form |Angular unit test case Tutorials
+- [Stack Overflow](https://stackoverflow.com/questions/54642650/spec-has-no-expectation-console-error-although-expect-is-present) - spec has no expectation console error although expect is present

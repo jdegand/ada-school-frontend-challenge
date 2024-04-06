@@ -69,7 +69,9 @@ export class HomepageComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log('form', this.form);
+      // console.log('form', this.form);
+      // having formData created in this method is problematic for testing
+      // can't access the formData object to check values
       let formData = new FormData();
 
       formData.append("origin", this.form.controls['formSelect'].value);

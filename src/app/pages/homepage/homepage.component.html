@@ -10,7 +10,7 @@
         }
     </select>
     <br>
-    <small [hidden]="origin.valid || origin.untouched">Origin is required.</small>
+    <small id="origin-required" [hidden]="origin.valid || origin.untouched">Origin is required.</small>
     <br>
     <br>
     <label for="destination">Destination</label>
@@ -30,7 +30,7 @@
     <input id="passengers" name="passengers" type="number" [(ngModel)]="model.occupants" #passengers="ngModel" min="1"
         max="10" required>
     <br>
-    <small [hidden]="passengers.valid || passengers.untouched">Passengers is required.</small>
+    <small id="passengers-required" [hidden]="passengers.valid || passengers.untouched">Passengers is required.</small>
     <br>
     <br>
     <label for="date">Date</label>
@@ -48,5 +48,5 @@
     <small [hidden]="time.valid || time.untouched">Time is required.</small>
     <br>
     <br>
-    <button>Submit</button>
+    <button id="submit-button">Submit</button>
 </form>
