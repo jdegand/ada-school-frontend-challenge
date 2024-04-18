@@ -26,6 +26,22 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 
 - Tests
 
+## How to Use
+
+```bash
+# Clone this repository
+$ git clone https://github.com/jdegand/ada-school-frontend-challenge.git
+
+# Install dependencies
+$ npm install
+
+# Run the app and navigate to localhost:4200
+$ npm start
+
+# Run the tests (Firefox launcher is installed)
+$ ng test --code-coverage
+```
+
 ## Useful Resources
 
 - [Angular Docs](https://angular.io/guide/forms) - forms
@@ -53,3 +69,4 @@ This is a solution to an [Ada School repo](https://github.com/ada-school/front-e
 - [Stack Overflow](https://stackoverflow.com/questions/40093013/unit-testing-click-event-in-angular) - unit testing click event in angular
 - [YouTube](https://www.youtube.com/watch?v=5Ueip44kjsQ) - Part 42- Angular Unit test case on template driven form |Angular unit test case Tutorials
 - [Stack Overflow](https://stackoverflow.com/questions/54642650/spec-has-no-expectation-console-error-although-expect-is-present) - spec has no expectation console error although expect is present
+- [Stack Overflow](https://stackoverflow.com/questions/24687355/faking-out-formdata-append-with-jasmine) - faking out formdata append with jasmine

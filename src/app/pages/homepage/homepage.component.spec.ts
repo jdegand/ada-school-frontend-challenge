@@ -132,36 +132,28 @@ describe('HomepageComponent', () => {
         expect(spy).toHaveBeenCalled();
       })
     })
+  }));
 
-  }))
+  it('should convert FormData to JSON object', function () {
+    const formData = new FormData();
+    formData.append('key1', 'value1');
+    formData.append('key2', 'value2');
 
-});
+    const jsonObject = component.convertFormDataToJson(formData);
 
-/*
-describe('MyComponent', () => {
-  let component: MyComponent;
-  let fixture: ComponentFixture<MyComponent>;
-  let apiService: jasmine.SpyObj<ApiService>;
-
-  beforeEach(() => {
-    apiService = jasmine.createSpyObj('ApiService', ['postData']);
-
-    TestBed.configureTestingModule({
-      declarations: [MyComponent],
-      imports: [FormsModule, HttpClientTestingModule],
-      providers: [{ provide: ApiService, useValue: apiService }]
-    });
-
-    fixture = TestBed.createComponent(MyComponent);
-    component = fixture.componentInstance;
+    expect(jsonObject).toEqual({ key1: 'value1', key2: 'value2' });
   });
 
-  it('should make an API request when form is submitted', () => {
-    const form = fixture.nativeElement.querySelector('form');
-    form.dispatchEvent(new Event('submit'));
+  it('should return the current date in the format "YYYY-MM-DD"', function () {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
 
-    expect(apiService.postData).toHaveBeenCalled();
-    // You can also add more specific assertions based on your API request
+    const expectedDate = `${year}-${month}-${day}`;
+    const actualDate = component.getTodayDate();
+
+    expect(actualDate).toEqual(expectedDate);
   });
+
 });
-*/
