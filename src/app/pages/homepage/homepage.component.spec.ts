@@ -7,7 +7,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 describe('HomepageComponent', () => {
   let component: HomepageComponent;
   let fixture: ComponentFixture<HomepageComponent>;
-  let service: ApiService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,7 +17,6 @@ describe('HomepageComponent', () => {
 
     fixture = TestBed.createComponent(HomepageComponent);
     component = fixture.componentInstance;
-    service = TestBed.inject(ApiService);
   });
 
   it('should create', () => {
@@ -52,7 +50,6 @@ describe('HomepageComponent', () => {
     timeInput.value = '20:00';
 
     originInput.dispatchEvent(new Event('change'));
-    //destinationInput.dispatchEvent(new Event('change'));
     passengersInput.dispatchEvent(new Event('input'));
     dateInput.dispatchEvent(new Event('change'));
     timeInput.dispatchEvent(new Event('change'));
@@ -63,11 +60,9 @@ describe('HomepageComponent', () => {
     submitButton.click();
     tick();
     expect(component.form.invalid).toEqual(true);
-    //expect(destinationInput.hasAttribute('aria-required')).toEqual(true);
   }))
 
   it('submit succeeds when form is valid', fakeAsync(() => {
-    //spyOn(service, 'addBooking');
     const originInput: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#origin');
     const destinationInput: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#destination');
     const passengersInput: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#passengers');
@@ -89,8 +84,6 @@ describe('HomepageComponent', () => {
     fixture.detectChanges();
 
     expect(component.form.valid).toEqual(true);
-
-    // component.onSubmit();
 
     const submitButton = fixture.debugElement.nativeElement.querySelector("#submit-button");
     submitButton.click();
