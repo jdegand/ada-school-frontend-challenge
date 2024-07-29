@@ -69,7 +69,6 @@ export class HomepageComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      // console.log('form', this.form);
       // having formData created in this method is problematic for testing
       // can't access the formData object to check values
       let formData = new FormData();
@@ -79,12 +78,6 @@ export class HomepageComponent {
       formData.append("occupants", this.form.controls['passengers'].value);
       formData.append("date", this.form.controls['date'].value);
       formData.append("time", this.form.controls['time'].value);
-
-      /*
-      formData.forEach((value, key) => {
-        console.log(key + " " + value)
-      });
-      */
 
       const jsonData = this.convertFormDataToJson(formData);
 
