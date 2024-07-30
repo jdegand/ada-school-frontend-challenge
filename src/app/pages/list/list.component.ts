@@ -7,8 +7,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-list',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  templateUrl: './list.component.html'
 })
 export class ListComponent implements OnInit {
 

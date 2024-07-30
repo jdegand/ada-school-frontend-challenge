@@ -6,8 +6,7 @@ import { ApiService } from '../../service/api.service';
   selector: 'app-homepage',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.css'
+  templateUrl: './homepage.component.html'
 })
 export class HomepageComponent {
 

@@ -6,8 +6,7 @@ import { Booking } from '../../interface/booking.model';
   selector: 'app-detailpage',
   standalone: true,
   imports: [],
-  templateUrl: './detailpage.component.html',
-  styleUrl: './detailpage.component.css'
+  templateUrl: './detailpage.component.html'
 })
 export class DetailpageComponent implements OnInit {
   @Input({ transform: numberAttribute }) id!:number;
