@@ -6,9 +6,8 @@ import { Booking } from '../interface/booking.model';
   providedIn: 'root'
 })
 export class ApiService {
-
-  #bookingUrl = 'api/bookings/';
-  #http = inject(HttpClient);
+  readonly #bookingUrl = 'api/bookings/';
+  readonly #http = inject(HttpClient);
 
   getBookings() {
     return this.#http.get<Booking[]>(this.#bookingUrl);

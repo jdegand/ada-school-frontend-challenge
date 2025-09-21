@@ -8,7 +8,7 @@ export class InMemoryDataService {
 
   private idCount = 2;
 
-  private fakeDB: Booking[] = [
+  private readonly fakeDB: Booking[] = [
     {
       "id": 1,
       "origin": "Bronx",
